@@ -1,2 +1,2 @@
 # ISMIR Paper Templates
-LaTeX and Word templates for each ISMIR conference.
+LaTeX and Word templates for ISMIR conferences by year.
