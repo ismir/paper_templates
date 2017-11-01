@@ -40,18 +40,13 @@
 % New version: Section 1 (period was removed)
 
 
-
-%%%<<<<<<<<<<>>>>>>>>>>>%%%
-%%%TO BE CHANGED EVERY YEAR
-\newcommand{\conferenceyear}{2017}
-\newcommand{\conferenceedition}{18th}
-%%%<<<<<<<<<<>>>>>>>>>>>%%%
-%%%<<<<<<<<<<>>>>>>>>>>>%%%
-
-
-
 %\newcommand\setauthorname[1]{\def\authorname{#1}}
 %Do this in the oneauthor, twoauthor, etc. commands
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage{natbib}
+\bibliographystyle{apalike}
 
 \def\Hline{\noalign{\hrule height 0.4mm}}
 \newcommand{\bm}[1]{\mbox{\boldmath{$#1$}}}
@@ -105,7 +100,6 @@
     {$^{\@thefnmark}$\hss}
   }
   \twocolumn[\@maketitle]
-  \permission
   \@thanks
   \endgroup
   \setcounter{footnote}{0}
@@ -160,24 +154,6 @@
   \restore@spacing
 }
 %%%
-
-\newcommand{\permission}{%
-\begin{figure}[b]{%
-\footnotesize
-%{\includegraphics[height=0.45cm]{figs/88x31}}
-{\includegraphics[height=0.45cm]{figs/cc_by.pdf}}
-\vskip -.45cm
-\begin{spacing}{1.1}
-\hskip 1.5cm \copyright \hskip .1cm \authorname.
-Licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0).
-{\bf Attribution: } \authorname.
-``\@title'',
-\conferenceedition\ International Society for Music Information Retrieval Conference, Suzhou, China, \conferenceyear.
-\end{spacing}
-}
-\end{figure}
-}
-
 
 \def\multauthor#1#2{
   \gdef\@author{
@@ -321,74 +297,19 @@ Licensed under a Creative Commons Attribution 4.0 International License (CC BY 4
 %\def\title#1{\gdef\@title{\uppercase{#1}}}
 \def\title#1{\gdef\@title{{#1}}}
 
-\newif\if@ismirsection
+\usepackage{titlesec}
 
-\renewcommand\section{
-  \@ismirsectiontrue
-  \@startsection
-  {section}
-  {1}
-  {\z@}
-  {-3.5ex \@plus -1ex \@minus -.2ex}
-  {6pt \@plus.2ex}
-  {\large\bf\centering}
-}
+\titleformat{\section}
+  {\filcenter\normalsize\bfseries\uppercase}{\thesection.}
+  {8pt \@plus.2ex}{}[]
 
-\renewcommand\subsection{
-  \@ismirsectionfalse
-  \@startsection
-  {subsection}
-  {2}
-  {\z@}
-  {-2.5ex \@plus -1ex \@minus -.2ex}
-  {6pt \@plus.2ex}
-  {\normalsize\bf\raggedright}
-}
+\titleformat{\subsection}
+  {\normalsize\bfseries}{\thesubsection}
+  {8pt \@plus.2ex}{}[]
 
-\renewcommand\subsubsection{
-  \@ismirsectionfalse
-  \@startsection
-  {subsubsection}
-  {3}
-  {\z@}
-  {-1.5ex \@plus -1ex \@minus -.2ex}
-  {6pt \@plus.2ex}
-  {\normalsize\it\raggedright}
-}
-
-\def\@sect#1#2#3#4#5#6[#7]#8{
-  \refstepcounter{#1}
-  \if@ismirsection
-    \edef\@svsec{\csname the#1\endcsname.\hskip 0.6em}
-  \else
-    \edef\@svsec{\csname the#1\endcsname\hskip 0.6em}
-  \fi
-  \begingroup
-    \ifnum #2=1
-      \bf\centering{\interlinepenalty \@M \@svsec\uppercase{#8}\par}
-    \else
-      \ifnum #2=2
-        \bf\raggedright
-        \noindent{\interlinepenalty \@M \@svsec #8\par}
-      \else
-        \it\raggedright
-        \noindent{\interlinepenalty \@M \@svsec #8\par}
-      \fi
-    \fi
-  \endgroup
-  \csname #1mark\endcsname{#7}\addcontentsline
-  {toc}{#1}{\protect\numberline
-  \if@ismirsection
-    {\csname the#1\endcsname.}
-  \else
-    {\csname the#1\endcsname}
-  \fi
-  #7}
-  \@tempskipa #5\relax
-  \@xsect{\@tempskipa}
-}
-
-\bibliographystyle{plain}
+\titleformat{\subsubsection}
+  {\normalsize\itshape}{\thesubsubsection}
+  {8pt \@plus.2ex}{}[]
 
 \def\thebibliography#1{
   \section{References}\list
