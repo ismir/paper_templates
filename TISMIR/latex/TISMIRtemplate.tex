@@ -1,13 +1,6 @@
 % -----------------------------------------------
-% Template for ISMIR Papers
-% 2017 version, based on previous ISMIR templates
-
-% Requirements :
-% * 6+n page length maximum
-% * 4MB maximum file size
-% * Copyright note must appear in the bottom left corner of first page
-% * Clearer statement about citing own work in anonymized submission
-% (see conference website for additional details)
+% Template for TISMIR Papers
+% 2017 version, based on previous ISMIR conference template
 % -----------------------------------------------
 
 \documentclass{article}
@@ -67,13 +60,22 @@
 
 \begin{document}
 
-%
+\twocolumn[
+\large{\bfseries ARTICLE TYPE}
+
 \maketitle
 %
-\begin{abstract}
-The abstract should be placed at the top left column and should contain about 150-200 words.
-\end{abstract}
+\begin{onecolabstract}
+Research articles must have the main text prefaced by an abstract of no more
+than 250 words summarising the main arguments and conclusions of the article.
+This must have the heading ``Abstract'' and be easily identified from the start
+of the main text.
+\end{onecolabstract}
 %
+\begin{keywords}
+Up to six keywords (optional).
+\end{keywords}
+]
 
 \section{Headings}\label{sec:headings}
 
@@ -120,16 +122,12 @@ instead.
 If in-text citations cannot be used, a source can be cited as part of a note.
 Please insert the endnote marker after the end punctuation.
 
-% To this end, n this version of the \LaTeX\ template, the authors can
-% use the \verb=\footnote{}= command, as shown in Sec.~\ref{sec:introduction},
-% as well as \verb=\endnote{}=.\endnote{For instance, here}
-
 \section{Figures}\label{sec:figures}
 
 Figures must all be cited in the main text, in sequential order.
 All figures should be placed within the text file upon submission and during
-the review process. Figures/images have a resolution of at least 150dpi
-(300dpi or above preferred). The files are in one of the following formats:
+the review process. Figures/images have a resolution of at least 150 dpi
+(300 dpi or above preferred). The files are in one of the following formats:
 JPG, TIFF, GIF, PNG, EPS (to maximise quality,
 the original source file is preferred).
 
@@ -219,7 +217,7 @@ placed after the main text but before the reference list.
 If any of the authors have any competing interests then these
 must be declared. A short paragraph should be placed before
 the references.
-Guidelines for competing interests are available online.\footnote{http://transactions.ismir.net/information/competingInterestGuidelines}
+Guidelines for competing interests are available online.\endnote{Link to guidelines: \url{http://transactions.ismir.net/information/competingInterestGuidelines}}
 
 \section{Ethics and consent}
 
@@ -237,7 +235,7 @@ References should not be listed if they are not cited in
 the main text.
 This journal uses the APA system.
 Please visit the journal's website
-for examples of referencing format.\footnote{http://transactions.ismir.net/about/submissions/\#References}
+for examples of referencing format.\endnote{Link to citation examples: \url{http://transactions.ismir.net/about/submissions/\#References}}
 
 In this template, you can use \verb=\citep{}= to include references
 surrounded by parentheses, such as~\citep{Author:00}, and \verb=\citet{}=
@@ -246,6 +244,12 @@ for references embedded in the text, such as~\cite{Author:00}.
 \section{Acknowledgements}
 
 The authors would like to thank\dots
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Please do not touch.
+% Print Endnotes
+\theendnotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % For bibtex users:
 \bibliography{TISMIRtemplate}

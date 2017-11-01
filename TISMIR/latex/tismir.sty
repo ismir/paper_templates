@@ -1,4 +1,7 @@
-% Latex Paper Template for ISMIR 2017
+% Latex Paper Template for TISMIR
+%
+% Version 2010111
+% Adapted ISMIR 2017's paper template to TISMIR requirements.
 %
 % Updated for 2017 conference, 12.27.2016 by Zhiyao Duan
 %
@@ -91,47 +94,57 @@
 
 \twocolumn
 \pagestyle{empty}
+\date{}
 
-\def\maketitle{\par
-  \begingroup
-  \def\thefootnote{}
-  \def\@makefnmark{
-    \hbox
-    {$^{\@thefnmark}$\hss}
-  }
-  \twocolumn[\@maketitle]
-  \@thanks
-  \endgroup
-  \setcounter{footnote}{0}
-  \let\maketitle\relax
-  \let\@maketitle\relax
-  \gdef\thefootnote{
-  \arabic{footnote}
-  }
-  \gdef\@@savethanks{}
-  \gdef\@thanks{}
-  \gdef\@author{}
-  \gdef\@title{}
-  \let\thanks\relax
-}
+\usepackage{abstract}
+\renewcommand{\abstracttextfont}{\normalsize}
+\renewcommand{\absnamepos}{flushleft}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+\setlength{\absparindent}{0pt}
+\setlength{\absparsep}{0.5em plus 0.2em minus 0.2em}
+\setlength{\abstitleskip}{-1.5em}
 
-\def\@maketitle{
-  \newpage
-  \null
-  \begin{center} {
-    \Large \bf \uppercase \@title \par
-  }
-  \vskip 2.0em {
-    \large \lineskip .5em
-    \begin{tabular}[t]{c}
-    \@author \\
-    \end{tabular}
-    \par
-  }
-  \end{center}
-  \par
-  \vskip 2.0em
-}
+% \def\maketitle{\par
+%   \begingroup
+%   \def\thefootnote{}
+%   \def\@makefnmark{
+%     \hbox
+%     {$^{\@thefnmark}$\hss}
+%   }
+%   \twocolumn[\@maketitle]
+%   \@thanks
+%   \endgroup
+%   \setcounter{footnote}{0}
+%   \let\maketitle\relax
+%   \let\@maketitle\relax
+%   \gdef\thefootnote{
+%   \arabic{footnote}
+%   }
+%   \gdef\@@savethanks{}
+%   \gdef\@thanks{}
+%   \gdef\@author{}
+%   \gdef\@title{}
+%   \let\thanks\relax
+% }
+%
+% \def\@maketitle{
+%   \newpage
+%   \null
+%   \begin{center} {
+%     \Large \bf \uppercase \@title \par
+%   }
+%   \vskip 2.0em {
+%     \large \lineskip .5em
+%     \begin{tabular}[t]{c}
+%     \@author \\
+%     \end{tabular}
+%     \par
+%   }
+%   \end{center}
+%   \par
+%   \vskip 2.0em
+% }
 
 %%%From the setspace package
 \newcommand{\setstretch}[1]{%
@@ -155,6 +168,12 @@
 }
 %%%
 
+% Keyword section, added by Lance Cotton, adapted from IEEEtrans, corrected by Ulf-Dietrich Braumann
+\def\keywords{%
+\vspace{.5em}
+\normalsize {\bfseries Keywords:\,\relax}}
+\def\endkeywords{\par\vspace{1.0em}}
+
 \def\multauthor#1#2{
   \gdef\@author{
   \begin{tabular}{@{}c@{}}
@@ -176,16 +195,6 @@
 }
 
 \def\twoauthors#1#2#3#4{
-%  \gdef\@author{
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #1} \\
-%    #2
-%  \end{tabular}\hskip .3in
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #3} \\
-%    #4\relax
-%  \end{tabular}
-%  }
   \gdef\@author{
     \makebox[\textwidth]{%
       \hfill
@@ -224,18 +233,6 @@
       \end{tabular}
       \hfill
     }
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #1} \\
-%    #2
-%  \end{tabular}\hskip .3in
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #3} \\
-%    #4
-%  \end{tabular}\hskip .3in
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #5} \\
-%    #6\relax
-%  \end{tabular}
   }
   \def\authorname{#1, #3, #5}
 }
@@ -266,36 +263,12 @@
       \end{tabular}
       \hfill
     }
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #1} \\
-%    #2
-%  \end{tabular}\hskip .2cm
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #3} \\
-%    #4
-%  \end{tabular}\hskip .2cm
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #5} \\
-%    #6\relax
-%  \end{tabular}\hskip .2cm
-%  \begin{tabular}{@{}c@{}}
-%    {\bf #7} \\
-%    #8\relax
-%  \end{tabular}
   }
   \def\authorname{#1, #3, #5, #7}
 }
 
-\def\abstract{
-  \begin{center}{
-  \bf ABSTRACT
-  }
-  \end{center}
-}
-\def\endabstract{\par}
-
-%\def\title#1{\gdef\@title{\uppercase{#1}}}
-\def\title#1{\gdef\@title{{#1}}}
+\def\title#1{\gdef\@title{\uppercase{#1}}}
+% \def\title#1{\gdef\@title{{#1}}}
 
 \usepackage{titlesec}
 
@@ -324,6 +297,22 @@
 }
 
 \let\endthebibliography=\endlist
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Footnotes and Endnotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xpatch}
+\usepackage{endnotes}
+\renewcommand{\notesname}{NOTES}
+
+\renewcommand{\notesname}{NOTES}
+\makeatletter
+\xpretocmd{\theendnotes}{%
+  \xpatchcmd{\@makeenmark}{\hbox{\@textsuperscript{\normalfont\@theenmark}}}{%
+   \hbox{\normalfont\theenmark.\space}%
+ }{}{}%
+}{}{}
+
 
 \long\def\@makecaption#1#2{
   \vskip 10pt
