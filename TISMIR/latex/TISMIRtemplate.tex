@@ -241,7 +241,7 @@ In this template, you can use \verb=\citep{}= to include references
 surrounded by parentheses, such as~\citep{Author:00}, and \verb=\citet{}=
 for references embedded in the text, such as~\cite{Author:00}.
 
-\section{Acknowledgements}
+\section*{Acknowledgements}
 
 The authors would like to thank\dots
 
@@ -252,8 +252,10 @@ The authors would like to thank\dots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % For bibtex users:
+{
+\section*{References}
 \bibliography{TISMIRtemplate}
-
+}
 % For non bibtex users:
 %\begin{thebibliography}{citations}
 %

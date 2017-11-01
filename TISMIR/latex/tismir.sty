@@ -81,6 +81,10 @@
 \setlength\parskip{0\p@ \@plus \p@}
 %\def\baselinestretch{0.98}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Font sizes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \def\normalsize{\@setsize\normalsize{12.2pt}\xpt\@xpt}
 \def\small{\@setsize\small{10pt}\ixpt\@ixpt}
 \def\footnotesize{\@setsize\footnotesize{9pt}\viiipt\@viiipt}
@@ -96,6 +100,10 @@
 \pagestyle{empty}
 \date{}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{abstract}
 \renewcommand{\abstracttextfont}{\normalsize}
 \renewcommand{\absnamepos}{flushleft}
@@ -105,46 +113,6 @@
 \setlength{\absparsep}{0.5em plus 0.2em minus 0.2em}
 \setlength{\abstitleskip}{-1.5em}
 
-% \def\maketitle{\par
-%   \begingroup
-%   \def\thefootnote{}
-%   \def\@makefnmark{
-%     \hbox
-%     {$^{\@thefnmark}$\hss}
-%   }
-%   \twocolumn[\@maketitle]
-%   \@thanks
-%   \endgroup
-%   \setcounter{footnote}{0}
-%   \let\maketitle\relax
-%   \let\@maketitle\relax
-%   \gdef\thefootnote{
-%   \arabic{footnote}
-%   }
-%   \gdef\@@savethanks{}
-%   \gdef\@thanks{}
-%   \gdef\@author{}
-%   \gdef\@title{}
-%   \let\thanks\relax
-% }
-%
-% \def\@maketitle{
-%   \newpage
-%   \null
-%   \begin{center} {
-%     \Large \bf \uppercase \@title \par
-%   }
-%   \vskip 2.0em {
-%     \large \lineskip .5em
-%     \begin{tabular}[t]{c}
-%     \@author \\
-%     \end{tabular}
-%     \par
-%   }
-%   \end{center}
-%   \par
-%   \vskip 2.0em
-% }
 
 %%%From the setspace package
 \newcommand{\setstretch}[1]{%
@@ -168,11 +136,19 @@
 }
 %%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Keywords
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Keyword section, added by Lance Cotton, adapted from IEEEtrans, corrected by Ulf-Dietrich Braumann
 \def\keywords{%
 \vspace{.5em}
 \normalsize {\bfseries Keywords:\,\relax}}
 \def\endkeywords{\par\vspace{1.0em}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Authors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\multauthor#1#2{
   \gdef\@author{
@@ -181,7 +157,6 @@
     #2\relax
    \end{tabular}%\hskip .3in
   }
-%  \def\authorname{#1}
 }
 
 \def\oneauthor#1#2{
@@ -267,6 +242,10 @@
   \def\authorname{#1, #3, #5, #7}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \def\title#1{\gdef\@title{\uppercase{#1}}}
 % \def\title#1{\gdef\@title{{#1}}}
 
@@ -284,8 +263,12 @@
   {\normalsize\itshape}{\thesubsubsection}
   {8pt \@plus.2ex}{}[]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \def\thebibliography#1{
-  \section{References}\list
+  \list
   {[\arabic{enumi}]}{
   \settowidth\labelwidth{[#1]}\leftmargin 1em
   \advance\leftmargin\labelsep
