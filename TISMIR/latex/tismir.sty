@@ -67,7 +67,7 @@
 \setlength{\paperwidth}{210mm}
 \setlength{\textheight}{252mm}
 \setlength{\textwidth}{172mm}
-\setlength{\columnsep}{8mm}
+\setlength{\columnsep}{5mm}
 \setlength{\voffset}{-12mm}
 \setlength{\hoffset}{0mm}
 \setlength{\marginparwidth}{0mm}
@@ -76,7 +76,7 @@
 \setlength{\oddsidemargin}{-6mm}
 \setlength{\evensidemargin}{-6mm}
 
-\setlength\normallineskip{1\p@}
+\setlength\normallineskip{0.5\p@}
 \setlength\parskip{0\p@ \@plus \p@}
 %\def\baselinestretch{0.98}
 
@@ -104,7 +104,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{abstract}
-\renewcommand{\abstracttextfont}{\normalsize}
+\renewcommand{\abstractnamefont}{\large\sf\bfseries}
+\renewcommand{\abstracttextfont}{\sf\large}
 \renewcommand{\absnamepos}{flushleft}
 \setlength{\absleftindent}{0pt}
 \setlength{\absrightindent}{0pt}
@@ -141,29 +142,29 @@
 
 % Keyword section, added by Lance Cotton, adapted from IEEEtrans, corrected by Ulf-Dietrich Braumann
 \def\keywords{%
-\vspace{.2em}\rule{\textwidth}{0.4pt}\vspace{.3em}
-\normalsize {\bfseries Keywords:\,\relax}}
-\def\endkeywords{\\\rule{\textwidth}{0.4pt}\par\vspace{1.0em}}
+\vspace{.2em}\rule{\textwidth}{0.6pt}\vspace{.3em}
+\large {\sf \bfseries Keywords:\,\relax}\sf}
+\def\endkeywords{\\\rule{\textwidth}{0.6pt}\par\vspace{1.0em}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title and Section
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{titling}
-\pretitle{\vspace{-3em}\begin{flushleft}\LARGE}
+\pretitle{\vspace{-3em}\begin{flushleft}\sf\huge}
 \posttitle{\par\end{flushleft}}
-\preauthor{\begin{flushleft}\large}
+\preauthor{\begin{flushleft}\Large\sf}
 \postauthor{\par\end{flushleft}\vspace{-5em}}
 
 
 \usepackage{titlesec}
 
 \titleformat{\section}
-  {\normalsize\bfseries}{\thesection.}
+  {\large\sf\bfseries}{\thesection.}
   {8pt \@plus.2ex}{}[]
 
 \titleformat{\subsection}
-  {\bfseries}{\thesubsection}
+  {\sf\bfseries}{\thesubsection}
   {8pt \@plus.2ex}{}[]
 
 \titleformat{\subsubsection}
@@ -183,35 +184,76 @@
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\thebibliography#1{
-  \list
-  {[\arabic{enumi}]}{
-  \settowidth\labelwidth{[#1]}\leftmargin 1em
-  \advance\leftmargin\labelsep
-  \usecounter{enumi}
-  }
-  \def\newblock{\hskip .01em plus .01em minus .01em}
-  \sloppy\clubpenalty4000\widowpenalty4000
-  \sfcode`\.=1000\relax
-}
+% \def\thebibliography#1{
+%   \list
+%   {[\arabic{enumi}]}{
+%   \settowidth\labelwidth{[#1]}\leftmargin 1em
+%   \advance\leftmargin\labelsep
+%   \usecounter{enumi}
+%   }
+%   \def\newblock{\hskip .01em plus .01em minus .01em}
+%   \sloppy\clubpenalty4000\widowpenalty4000
+%   \sfcode`\.=1000\relax
+% }
 
-\let\endthebibliography=\endlist
+% \let\endthebibliography=\endlist
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Footnotes and Endnotes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{xpatch}
 \usepackage{endnotes}
-\renewcommand{\notesname}{NOTES}
 
-\renewcommand{\notesname}{NOTES}
-\makeatletter
-\xpretocmd{\theendnotes}{%
-  \xpatchcmd{\@makeenmark}{\hbox{\@textsuperscript{\normalfont\@theenmark}}}{%
-   \hbox{\normalfont\theenmark.\space}%
- }{}{}%
-}{}{}
+\renewcommand{\notesname}{Notes}
+\renewcommand{\enotesize}{\normalsize}
+\renewcommand\enoteformat{%
+  \leftskip=0.5em
+  \makebox[0pt][r]{\textsuperscript{\footnotesize \theenmark}
+    \hskip 0.3em\rule{0pt}{\dimexpr\ht\strutbox}}%
+}
+% \makeatletter
+% \xpretocmd{\theendnotes}{%
+%   \xpatchcmd{\@makeenmark}{\hbox{\@textsuperscript{\normalfont\@theenmark}}}{%
+%   % \xpatchcmd{\@makeenmark}{\hbox{\@textsuperscript{\normalfont\@theenmark}}}{%
+%    \hbox{\normalfont\theenmark.\space}%
+%  }{}{}%
+% }{}{}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Headers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\sf \thepage}
+\rhead{\sf Author1, Author2, Author3: Paper Template For TISMIR}
+
+
+% \geometry{top=6mm, headheight=40mm, headsep=40mm, total={165mm,243mm}, includeheadfoot}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\fancyhead[L]{%
+  \begin{minipage}{0.35\textwidth}
+  \sf \small Transactions of the International Society for Music Information Retrieval
+\end{minipage}
+\hfill
+\begin{minipage}{0.6\textwidth} \sf \small
+  Author1, F., Author2, S. and Author3, T. (2017).
+  Paper Template for TISMIR,
+  \textit{Transactions of the International Society for 
+  Music Information Retrieval}, V(N),
+  pp.\ xx--xx, DOI: https://doi.org/xx.xxxx/xxxx.xx
+\end{minipage}
+\vspace{0.5em}
+}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Captions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \long\def\@makecaption#1#2{
   \vskip 10pt
