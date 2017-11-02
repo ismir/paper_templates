@@ -1,0 +1,278 @@
+% Latex Paper Template for TISMIR
+%
+% Version 20170211
+% Adapted ISMIR 2017's paper template to TISMIR requirements.
+%
+% Updated for 2017 conference, 12.27.2016 by Zhiyao Duan
+%
+% Updated for 2016 conference, 02.02.2016 by Doug Turnbull
+%
+% Changes after submission, 23.07.2015 by Meinard Mueller
+% Inclusion of "\multauthor" ...
+%
+%
+% Version 20140604
+% Replaced \setauthorname with automatic setting from \oneauthor etc.
+% Added variable for edition of conference, e.g. 15th
+% Fixed spacing of authors to give equal rubber space between and around
+%   author/addresses in title block instead of a fixed space
+% Added a comma between conference name and year in copyright notice
+% Corrected \eqnref to not contain a dot after Eqn (the rule is that a dot is
+%   used if the abbreviation does not end with the last letter of the full word)
+%
+% Version 20140508
+% Added variables for
+%		- conference year (to be set in this .sty file, by Program Chairs)
+%		- author names (to be set in the .tex file, by the authors)
+% Added stuff from the setspace package
+% Changed the copyright footnote
+%
+% Version 20130205
+% changed 2009 -> 2010 -> 2012 -> 2013
+% \bibliographystyle{unsrt} -> \bibliographystyle{plain}
+%
+% Version 20090507
+% The specification of reference order was corrected.
+% \bibliographystyle{plain} -> \bibliographystyle{unsrt}
+%
+% Version 20090430
+% A problem regarding references to sections was fixed.
+% This caused doubled periods at the end of sentences.
+% Example: Section \ref{sec:introduction}
+% Old version: Section 1.
+% New version: Section 1 (period was removed)
+
+
+%\newcommand\setauthorname[1]{\def\authorname{#1}}
+%Do this in the oneauthor, twoauthor, etc. commands
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+\def\Hline{\noalign{\hrule height 0.4mm}}
+\newcommand{\bm}[1]{\mbox{\boldmath{$#1$}}}
+\newcommand{\range}[2]{{#1,\cdots,#2\;}}
+\newcommand{\secref}[1]{\mbox{Section~\ref{#1}}}
+\newcommand{\tabref}[1]{\mbox{Table~\ref{#1}}}
+\newcommand{\figref}[1]{\mbox{Figure~\ref{#1}}}
+\newcommand{\eqnref}[1]{\mbox{Eqn~(\ref{#1})}}
+
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\rmdefault}{bch}
+\renewcommand{\ttdefault}{qcr}
+
+\setlength{\paperheight}{297mm}
+\setlength{\paperwidth}{210mm}
+\setlength{\textheight}{240mm}
+\setlength{\textwidth}{172mm}
+\setlength{\columnsep}{5mm}
+\setlength{\voffset}{-14mm}
+\setlength{\hoffset}{0mm}
+\setlength{\marginparwidth}{0mm}
+\setlength{\parindent}{1pc}
+\setlength{\topmargin}{-2mm}
+\setlength{\oddsidemargin}{-6mm}
+\setlength{\evensidemargin}{-6mm}
+\setlength{\headsep}{12mm}
+
+\setlength\normallineskip{0.5\p@}
+\setlength\parskip{0\p@ \@plus \p@}
+%\def\baselinestretch{0.98}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Font sizes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\normalsize{\@setsize\normalsize{12pt}\xpt\@xpt}
+\def\small{\@setsize\small{10pt}\ixpt\@ixpt}
+\def\footnotesize{\@setsize\footnotesize{9pt}\viiipt\@viiipt}
+\def\scriptsize{\@setsize\scriptsize{8pt}\viipt\@viipt}
+\def\tiny{\@setsize\tiny{7pt}\vipt\@vipt}
+\def\large{\@setsize\large{14pt}\xiipt\@xiipt}
+\def\Large{\@setsize\Large{16pt}\xivpt\@xivpt}
+\def\LARGE{\@setsize\LARGE{20pt}\xviipt\@xviipt}
+\def\huge{\@setsize\huge{24pt}\xxpt\@xxpt}
+\def\Huge{\@setsize\Huge{28pt}\xxvpt\@xxvpt}
+
+\twocolumn
+\pagestyle{empty}
+\date{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{abstract}
+\renewcommand{\abstractnamefont}{\large\sf\bfseries}
+\renewcommand{\abstracttextfont}{\sf\large}
+\renewcommand{\absnamepos}{flushleft}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+\setlength{\absparindent}{0pt}
+\setlength{\absparsep}{0.5em plus 0.2em minus 0.2em}
+\setlength{\abstitleskip}{-1.5em}
+
+
+%%%From the setspace package
+\newcommand{\setstretch}[1]{%
+  \def\baselinestretch{#1}%
+  \@currsize
+}
+\newcommand{\restore@spacing}{%
+    \par
+    \vskip \parskip
+    \vskip \baselineskip
+  \endgroup
+  \vskip -\parskip
+  \vskip -\baselineskip
+}
+\newenvironment{spacing}[1]{%
+  \par
+  \begingroup
+    \setstretch {#1}%
+}{%
+  \restore@spacing
+}
+%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Keywords
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Keyword section, added by Lance Cotton, adapted from IEEEtrans, corrected by Ulf-Dietrich Braumann
+\def\keywords{%
+\vspace{.2em}\rule{\textwidth}{0.6pt}\vspace{.3em}
+\large {\sf \bfseries Keywords:\,\relax}\sf}
+\def\endkeywords{\\\rule{\textwidth}{0.6pt}\par\vspace{1.0em}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titling}
+\pretitle{\vspace{-3em}\begin{flushleft}\sf\bfseries\LARGE}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\Large\sf}
+\postauthor{\par\end{flushleft}\vspace{-5em}}
+
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\large\sf\bfseries}{\thesection.}
+  {8pt \@plus.2ex}{}[]
+
+\titleformat{\subsection}
+  {\sf\bfseries}{\thesubsection}
+  {8pt \@plus.2ex}{}[]
+
+\titleformat{\subsubsection}
+  {\itshape}{\thesubsubsection}
+  {8pt \@plus.2ex}{}[]
+
+\titlespacing*{\section}
+  {0pt}{2ex}{0pt}
+
+\titlespacing*{\subsection}
+  {0pt}{2ex}{0pt}
+
+\titlespacing*{\subsubsection}
+  {0pt}{2ex}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \def\thebibliography#1{
+%   \list
+%   {[\arabic{enumi}]}{
+%   \settowidth\labelwidth{[#1]}\leftmargin 1em
+%   \advance\leftmargin\labelsep
+%   \usecounter{enumi}
+%   }
+%   \def\newblock{\hskip .01em plus .01em minus .01em}
+%   \sloppy\clubpenalty4000\widowpenalty4000
+%   \sfcode`\.=1000\relax
+% }
+
+% \let\endthebibliography=\endlist
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Footnotes and Endnotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xpatch}
+\usepackage{endnotes}
+
+\renewcommand{\notesname}{Notes}
+\renewcommand{\enotesize}{\normalsize}
+\renewcommand\enoteformat{%
+  \leftskip=0.3em
+  \makebox[0pt][r]{\textsuperscript{\footnotesize \theenmark}
+    \hskip 0.2em\rule{0pt}{\dimexpr\ht\strutbox}}%
+}
+% \makeatletter
+% \xpretocmd{\theendnotes}{%
+%   \xpatchcmd{\@makeenmark}{\hbox{\@textsuperscript{\normalfont\@theenmark}}}{%
+%   % \xpatchcmd{\@makeenmark}{\hbox{\@textsuperscript{\normalfont\@theenmark}}}{%
+%    \hbox{\normalfont\theenmark.\space}%
+%  }{}{}%
+% }{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Headers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\lhead{\sf \thepage}
+\rhead{\sf Author1, Author2, Author3: Paper Template For TISMIR}
+
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.6pt}
+\fancyhead[L]{%
+  \begin{minipage}{0.35\textwidth}
+  \sf \small Transactions of the International 
+  Society for Music Information Retrieval
+\end{minipage}
+\hfill
+\begin{minipage}{0.6\textwidth} \sf \small
+  Author1, F., Author2, S. and Author3, T. (2017).
+  Paper Template for TISMIR,
+  \textit{Transactions of the International Society for 
+  Music Information Retrieval}, V(N),
+  pp.\ xx--xx, DOI: https://doi.org/xx.xxxx/xxxx.xx
+\end{minipage}
+\vspace{0.5em}
+}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Captions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \long\def\@makecaption#1#2{
+%   \vskip 10pt
+%   \setbox\@tempboxa\hbox{#1. #2}
+%   \ifdim
+%     \wd\@tempboxa >\hsize #1. #2\par
+%   \else
+%     \hbox
+%     to\hsize{\hfil\box\@tempboxa\hfil}
+%   \fi
+% }
+\usepackage{caption}
+\captionsetup{format=hang, indention=-3em} 
+
+
+
+\def\fnum@figure{{\bf Figure\ \thefigure}}
+\def\fnum@table{{\bf Table \thetable}}
+
+\flushbottom
