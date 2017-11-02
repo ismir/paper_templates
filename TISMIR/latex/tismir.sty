@@ -142,126 +142,43 @@
 
 % Keyword section, added by Lance Cotton, adapted from IEEEtrans, corrected by Ulf-Dietrich Braumann
 \def\keywords{%
-\vspace{.5em}
+\vspace{.2em}\rule{\textwidth}{0.4pt}\vspace{.3em}
 \normalsize {\bfseries Keywords:\,\relax}}
-\def\endkeywords{\par\vspace{1.0em}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Authors
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\def\multauthor#1#2{
-  \gdef\@author{
-  \begin{tabular}{@{}c@{}}
-    {\bf #1} \\
-    #2\relax
-   \end{tabular}%\hskip .3in
-  }
-}
-
-\def\oneauthor#1#2{
-  \gdef\@author{
-  \begin{tabular}{@{}c@{}}
-    {\bf #1} \\
-    #2\relax
-   \end{tabular}%\hskip .3in
-  }
-  \def\authorname{#1}
-}
-
-\def\twoauthors#1#2#3#4{
-  \gdef\@author{
-    \makebox[\textwidth]{%
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #1} \\
-        #2
-      \end{tabular}
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #3} \\
-        #4\relax
-      \end{tabular}
-      \hfill
-    }
-  }
-  \def\authorname{#1, #3}
-}
-
-\def\threeauthors#1#2#3#4#5#6{
-  \gdef\@author{
-    \makebox[\textwidth]{%
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #1} \\
-        #2
-      \end{tabular}
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #3} \\
-        #4
-      \end{tabular}
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #5} \\
-        #6\relax
-      \end{tabular}
-      \hfill
-    }
-  }
-  \def\authorname{#1, #3, #5}
-}
-
-
-\def\fourauthors#1#2#3#4#5#6#7#8{
-  \gdef\@author{
-    \makebox[\textwidth]{%
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #1} \\
-        #2
-      \end{tabular}
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #3} \\
-        #4
-      \end{tabular}
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #5} \\
-        #6
-      \end{tabular}
-      \hfill
-      \begin{tabular}{@{}c@{}}
-        {\bf #7} \\
-        #8\relax
-      \end{tabular}
-      \hfill
-    }
-  }
-  \def\authorname{#1, #3, #5, #7}
-}
+\def\endkeywords{\\\rule{\textwidth}{0.4pt}\par\vspace{1.0em}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title and Section
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\title#1{\gdef\@title{\uppercase{#1}}}
-% \def\title#1{\gdef\@title{{#1}}}
+\usepackage{titling}
+\pretitle{\vspace{-3em}\begin{flushleft}\LARGE}
+\posttitle{\par\end{flushleft}}
+\preauthor{\begin{flushleft}\large}
+\postauthor{\par\end{flushleft}\vspace{-5em}}
+
 
 \usepackage{titlesec}
 
 \titleformat{\section}
-  {\filcenter\normalsize\bfseries\uppercase}{\thesection.}
+  {\normalsize\bfseries}{\thesection.}
   {8pt \@plus.2ex}{}[]
 
 \titleformat{\subsection}
-  {\normalsize\bfseries}{\thesubsection}
+  {\bfseries}{\thesubsection}
   {8pt \@plus.2ex}{}[]
 
 \titleformat{\subsubsection}
-  {\normalsize\itshape}{\thesubsubsection}
+  {\itshape}{\thesubsubsection}
   {8pt \@plus.2ex}{}[]
+
+\titlespacing*{\section}
+  {0pt}{2ex}{0}
+
+\titlespacing*{\subsection}
+  {0pt}{2ex}{0}
+
+\titlespacing*{\subsubsection}
+  {0pt}{2ex}{0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography

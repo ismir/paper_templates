@@ -9,64 +9,43 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Page \thepage}
+\rhead{Author1, Author2, Author3: Paper Template For TISMIR}
 
-% Title.
-% ------
+% ----------------------------
+% Title and Author information
+% ----------------------------
 \title{Paper Template For TISMIR}
-
-% Note: Please do NOT use \thanks or a \footnote in any of the author markup
-
-% Single address
-% To use with only one author or several with the same address
-% ---------------
-%\oneauthor
-% {Names should be omitted for double-blind reviewing}
-% {Affiliations should be omitted for double-blind reviewing}
-
-% Two addresses
-% --------------
-%\twoauthors
-%  {First author} {School \\ Department}
-%  {Second author} {Company \\ Address}
-
-%% To make customize author list in Creative Common license, uncomment and customize the next line
-%  \def\authorname{First Author, Second Author}
-
-
-% Three addresses
-% --------------
-\threeauthors
-  {First Author} {Affiliation1 \\ {\tt author1@ismir.edu}}
-  {Second Author} {\bf Retain these fake authors in\\\bf submission to preserve the formatting}
-  {Third Author} {Affiliation3 \\ {\tt author3@ismir.edu}}
-
-%% To make customize author list in Creative Common license, uncomment and customize the next line
-%  \def\authorname{First Author, Second Author, Third Author}
-
-% Four or more addresses
-% OR alternative format for large number of co-authors
-% ------------
-%\multauthor
-%{First author$^1$ \hspace{1cm} Second author$^1$ \hspace{1cm} Third author$^2$} { \bfseries{Fourth author$^3$ \hspace{1cm} Fifth author$^2$ \hspace{1cm} Sixth author$^1$}\\
-%  $^1$ Department of Computer Science, University , Country\\
-%$^2$ International Laboratories, City, Country\\
-%$^3$  Company, Address\\
-%{\tt\small CorrespondenceAuthor@ismir.edu, PossibleOtherAuthor@ismir.edu}
-%}
-%\def\authorname{First author, Second author, Third author, Fourth author, Fifth author, Sixth author}
-
+\author{First Author1\thanks{Affiliation 1}, Second Author2, and Third Author3}
 
 \sloppy % please retain sloppy command for improved formatting
 
 \begin{document}
-
 \twocolumn[
+\begin{minipage}{0.35\textwidth}
+  Transactions of the International Society for Music Information Retrieval
+\end{minipage}
+\hfill
+\begin{minipage}{0.6\textwidth}
+  First Author, Second Author, and Third Author,
+  `Paper Template for TISMIR', (2017),
+  Transactions of the International Society for Music Information Retrieval,
+  pp.\ xx--xx, DOI: https://doi.org/xx.xxxx/xxxx.xx
+\end{minipage}
+\bigskip
+\hrule
+\bigskip
 \large{\bfseries ARTICLE TYPE}
-
 \maketitle
+\thispagestyle{empty}
+%
+\rule{\textwidth}{0.4pt}
 %
 \begin{onecolabstract}
-Research articles must have the main text prefaced by an abstract of no more
+\noindent Research articles must have the main text prefaced by an abstract of no more
 than 250 words summarising the main arguments and conclusions of the article.
 This must have the heading ``Abstract'' and be easily identified from the start
 of the main text.
