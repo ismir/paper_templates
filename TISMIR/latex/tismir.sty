@@ -60,21 +60,22 @@
 \newcommand{\eqnref}[1]{\mbox{Eqn~(\ref{#1})}}
 
 \renewcommand{\sfdefault}{phv}
-\renewcommand{\rmdefault}{ptm}
-\renewcommand{\ttdefault}{pcr}
+\renewcommand{\rmdefault}{bch}
+\renewcommand{\ttdefault}{qcr}
 
 \setlength{\paperheight}{297mm}
 \setlength{\paperwidth}{210mm}
-\setlength{\textheight}{252mm}
+\setlength{\textheight}{240mm}
 \setlength{\textwidth}{172mm}
 \setlength{\columnsep}{5mm}
-\setlength{\voffset}{-12mm}
+\setlength{\voffset}{-14mm}
 \setlength{\hoffset}{0mm}
 \setlength{\marginparwidth}{0mm}
 \setlength{\parindent}{1pc}
-\setlength{\topmargin}{-5mm}
+\setlength{\topmargin}{-2mm}
 \setlength{\oddsidemargin}{-6mm}
 \setlength{\evensidemargin}{-6mm}
+\setlength{\headsep}{12mm}
 
 \setlength\normallineskip{0.5\p@}
 \setlength\parskip{0\p@ \@plus \p@}
@@ -84,7 +85,7 @@
 % Font sizes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\normalsize{\@setsize\normalsize{12.2pt}\xpt\@xpt}
+\def\normalsize{\@setsize\normalsize{12pt}\xpt\@xpt}
 \def\small{\@setsize\small{10pt}\ixpt\@ixpt}
 \def\footnotesize{\@setsize\footnotesize{9pt}\viiipt\@viiipt}
 \def\scriptsize{\@setsize\scriptsize{8pt}\viipt\@viipt}
@@ -92,7 +93,7 @@
 \def\large{\@setsize\large{14pt}\xiipt\@xiipt}
 \def\Large{\@setsize\Large{16pt}\xivpt\@xivpt}
 \def\LARGE{\@setsize\LARGE{20pt}\xviipt\@xviipt}
-\def\huge{\@setsize\huge{23pt}\xxpt\@xxpt}
+\def\huge{\@setsize\huge{24pt}\xxpt\@xxpt}
 \def\Huge{\@setsize\Huge{28pt}\xxvpt\@xxvpt}
 
 \twocolumn
@@ -151,7 +152,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{titling}
-\pretitle{\vspace{-3em}\begin{flushleft}\sf\huge}
+\pretitle{\vspace{-3em}\begin{flushleft}\sf\bfseries\LARGE}
 \posttitle{\par\end{flushleft}}
 \preauthor{\begin{flushleft}\Large\sf}
 \postauthor{\par\end{flushleft}\vspace{-5em}}
@@ -207,9 +208,9 @@
 \renewcommand{\notesname}{Notes}
 \renewcommand{\enotesize}{\normalsize}
 \renewcommand\enoteformat{%
-  \leftskip=0.5em
+  \leftskip=0.3em
   \makebox[0pt][r]{\textsuperscript{\footnotesize \theenmark}
-    \hskip 0.3em\rule{0pt}{\dimexpr\ht\strutbox}}%
+    \hskip 0.2em\rule{0pt}{\dimexpr\ht\strutbox}}%
 }
 % \makeatletter
 % \xpretocmd{\theendnotes}{%
@@ -225,18 +226,19 @@
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
 \fancyhf{}
 \lhead{\sf \thepage}
 \rhead{\sf Author1, Author2, Author3: Paper Template For TISMIR}
 
 
-% \geometry{top=6mm, headheight=40mm, headsep=40mm, total={165mm,243mm}, includeheadfoot}
-
 \fancypagestyle{plain}{%
 \fancyhf{}
+\renewcommand{\headrulewidth}{0.6pt}
 \fancyhead[L]{%
   \begin{minipage}{0.35\textwidth}
-  \sf \small Transactions of the International Society for Music Information Retrieval
+  \sf \small Transactions of the International 
+  Society for Music Information Retrieval
 \end{minipage}
 \hfill
 \begin{minipage}{0.6\textwidth} \sf \small
@@ -255,16 +257,20 @@
 % Captions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\long\def\@makecaption#1#2{
-  \vskip 10pt
-  \setbox\@tempboxa\hbox{#1. #2}
-  \ifdim
-    \wd\@tempboxa >\hsize #1. #2\par
-  \else
-    \hbox
-    to\hsize{\hfil\box\@tempboxa\hfil}
-  \fi
-}
+% \long\def\@makecaption#1#2{
+%   \vskip 10pt
+%   \setbox\@tempboxa\hbox{#1. #2}
+%   \ifdim
+%     \wd\@tempboxa >\hsize #1. #2\par
+%   \else
+%     \hbox
+%     to\hsize{\hfil\box\@tempboxa\hfil}
+%   \fi
+% }
+\usepackage{caption}
+\captionsetup{format=hang, indention=-3em} 
+
+
 
 \def\fnum@figure{{\bf Figure\ \thefigure}}
 \def\fnum@table{{\bf Table \thetable}}
