@@ -106,6 +106,7 @@
 % Paper Information Variables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \def\thetitleref{\@title}
 \def\thetitleshort{\@title}
 \newcommand{\titleshort}[1]{\def\thetitleshort{#1}}
@@ -134,6 +135,31 @@
 \def\thedoi{xx.xxxx/xxxx.xx}
 \newcommand{\doi}[1]{\def\thedoi{#1}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Block
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\thetype}{}
+\newcommand{\type}[1]{\renewcommand{\thetype}{#1}}
+\makeatletter
+\newcommand{\typename}{\@nameuse{type@\thetype @name}}
+\newcommand{\settype}[2]{%
+  \@namedef{type@#1@name}{#2}%
+}
+\makeatother
+
+\settype{}{article type}
+\settype{research}{research\ article}
+\settype{overview}{overview\ article}
+\settype{dataset}{dataset}
+
+
+\def\maketitleblock{
+\textsf{\bfseries \large \MakeUppercase \typename}
+\maketitle
+%
+\rule{\textwidth}{0.4pt}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Headers

@@ -22,7 +22,6 @@
 
 \title{Paper Template for TISMIR}
 %
-\usepackage{authblk}
 \author{%
 First Author1\thanks{University One, Campus Rd. 3, 12345 Mirland},%
 ~Second Author2\thanks{Research Institute Two, Campus Rd. 4, 12345 Flatland},%
@@ -32,8 +31,12 @@ First Author1\thanks{University One, Campus Rd. 3, 12345 Mirland},%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Information for Page Headers
+% Additional Paper Information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Article Type - Uncomment and modify, if necessary. 
+% Accepted values: research, overview, and dataset
+% \type{research}
 
 % Citation in First Page
 %
@@ -59,15 +62,13 @@ First Author1\thanks{University One, Campus Rd. 3, 12345 Mirland},%
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \twocolumn[{%
-\textsf{\bfseries \large ARTICLE TYPE}
-\maketitle
 %
-\rule{\textwidth}{0.4pt}
+\maketitleblock
 %
 \begin{abstract}
 \noindent
@@ -85,9 +86,9 @@ Up to six keywords (optional).
 }]
 \saythanks{}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Main Content Start
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Headings}\label{sec:headings}
 
