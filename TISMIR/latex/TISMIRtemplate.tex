@@ -1,29 +1,37 @@
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Template for TISMIR Papers
 % 2017 version, based on previous ISMIR conference template
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sample Document LaTeX packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[utf8]{inputenc}
-\usepackage{tismir,amsmath,url}
+\usepackage{tismir}
+\usepackage{amsmath}
+\usepackage{url}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{lipsum}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title and Author information
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Paper Template For TISMIR}
 %
-\author{First Author1\thanks{University One, Campus Rd. 3, 12345 Mirland},%
+\author{%
+First Author1\thanks{University One, Campus Rd. 3, 12345 Mirland},%
 ~Second Author2\thanks{Research Institute Two, Campus Rd. 4, 12345 Flatland},%
 ~and Third Author3\protect\footnotemark[1]}
 
 \date{}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Setup for Page Headers
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{fancyhdr}
 
@@ -55,8 +63,6 @@
 \fancyhf{}
 \lhead{\sf \thepage}
 \rhead{\sf Author1, Author2, Author3: Paper Template For TISMIR}
-
-\sloppy % please retain sloppy command for improved formatting
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document Content
@@ -105,28 +111,11 @@ methods, conclusions and discussion are all clearly indicated by a first level h
 
 \subsection{Level heading 2}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Maecenas finibus posuere lorem nec pulvinar. Donec varius
-rhoncus leo nec semper. Nulla pulvinar ex nulla, sit amet feugiat
-nisi laoreet auctor. Cras tincidunt, neque non lacinia porttitor,
-libero ante placerat justo, ut iaculis ante libero quis justo.
-Ut sed volutpat leo. Curabitur
-Etiam nunc elit, venenatis et gravida non, commodo sed massa.
-Sed cursus, massa ornare fringilla rhoncus, nisi diam consectetur urna,
-id fringilla quam orci at magna.
+\lipsum[1]
 
 \subsubsection{Level heading 3}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Maecenas finibus posuere lorem nec pulvinar. Donec varius rhoncus leo
-nec semper. Nulla pulvinar ex nulla, sit amet feugiat nisi laoreet auctor.
-Cras tincidunt, neque non lacinia porttitor, libero ante placerat justo,
-ut iaculis ante libero quis justo. Ut sed volutpat leo. Curabitur ligula
-lorem, tempus eu ipsum non, tempus volutpat ipsum. Nulla at fermentum ex.
-Nullam ultrices et enim et venenatis. Nam maximus id risus pharetra ultrices.
-Praesent auctor porta dolor at accumsan.
-Integer justo metus, iaculis vitae egestas pulvinar, rhoncus nec ipsum.
-Sed vel porttitor libero.
+\lipsum[2]
 
 \section{Footnotes}\label{sec:footnotes}
 
