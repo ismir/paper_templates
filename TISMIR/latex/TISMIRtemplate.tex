@@ -20,8 +20,9 @@
 % Title and Author information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Paper Template For TISMIR}
+\title{Paper Template for TISMIR}
 %
+\usepackage{authblk}
 \author{%
 First Author1\thanks{University One, Campus Rd. 3, 12345 Mirland},%
 ~Second Author2\thanks{Research Institute Two, Campus Rd. 4, 12345 Flatland},%
@@ -29,40 +30,28 @@ First Author1\thanks{University One, Campus Rd. 3, 12345 Mirland},%
 
 \date{}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Setup for Page Headers
+% Information for Page Headers
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{fancyhdr}
+% Citation in First Page
+%
+% "Mandatory" (if missing will print the complete list of authors,
+% including the \thanks symbols)
+\authorref{Author1,~F., Author2,~S. and Author3,~T.}
+%
+% (Optional)
+% \journalyear{2017}
+% \journalvolume{V}
+% \journalissue{N}
+% \journalpages{xx--xx}
+% \doi{xx.xxxx/xxxx.xx}
 
-% adjust pagestyle "plain" which is used on the first page
-\fancypagestyle{plain}{%
-  \fancyhf{}
-  \renewcommand{\headrulewidth}{0.6pt}
-
-  \fancyhead[L]{%
-    \begin{minipage}{0.35\textwidth}
-    \sf \small Transactions of the International
-    Society for Music Information Retrieval
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.6\textwidth} \sf \small
-    Author1, F., Author2, S. and Author3, T. (2017).
-    Paper Template for TISMIR,
-    \textit{Transactions of the International Society for
-    Music Information Retrieval}, V(N),
-    pp.\ xx--xx, DOI: https://doi.org/xx.xxxx/xxxx.xx
-  \end{minipage}
-  \vspace{0.5em}
-  }
-}
-
-% pagestyle "fancy" is used in the rest of the document
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhf{}
-\lhead{\sf \thepage}
-\rhead{\sf Author1, Author2, Author3: Paper Template For TISMIR}
+% Remaining Pages (Optional)
+%
+\authorshort{Author1, Author2 and Author3} % or, e.g., \authorshort{Author1 et al}
+% \titleshort{Template for TISMIR}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Document Content
