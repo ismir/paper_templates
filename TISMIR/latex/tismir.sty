@@ -10,7 +10,7 @@
 
 \setlength{\paperheight}{297mm}
 \setlength{\paperwidth}{210mm}
-\setlength{\textheight}{245mm}
+\setlength{\textheight}{243mm}
 \setlength{\textwidth}{172mm}
 \setlength{\columnsep}{5mm}
 \setlength{\voffset}{-14mm}
@@ -30,16 +30,10 @@
 % Fonts
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand{\ttdefault}{qcr}
-% \renewcommand{\familydefault}{\rmdefault}
-
-
-% \usepackage{libertine}
+\usepackage{inconsolata}
+\usepackage{fourier}
 \usepackage{quattrocento}
-% \usepackage{arev}
 \usepackage{charter}
-
-
 
 \def\normalsize{\@setsize\normalsize{12pt}\xpt\@xpt}
 \def\small{\@setsize\small{10pt}\ixpt\@ixpt}
@@ -82,10 +76,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{titling}
-\pretitle{\vspace{-3em}\begin{flushleft}\sf\bfseries\huge}
+\pretitle{\vspace{-3.5em}\begin{flushleft}\sf\bfseries\huge}
 \posttitle{\par\end{flushleft}}
 \preauthor{\begin{flushleft}\Large\sf}
-\postauthor{\par\end{flushleft}\vspace{-5em}}
+\postauthor{\par\end{flushleft}\vspace{-5.5em}}
 
 \usepackage{titlesec}
 
@@ -184,7 +178,9 @@
 
 \fancyhead[L]{%
     \begin{minipage}{0.35\textwidth}
-    \sf \small \thejournal  \end{minipage}
+    % \sf \small \thejournal 
+    \includegraphics[width=0.85\textwidth]{tismir}
+  \end{minipage}
   \hfill
   \begin{minipage}{0.55\textwidth} \sf \small
     \theauthorref\ (\theyear).
