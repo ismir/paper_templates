@@ -63,6 +63,10 @@
 \newcommand{\figref}[1]{\mbox{Figure~\ref{#1}}}
 \newcommand{\eqnref}[1]{\mbox{Eqn~(\ref{#1})}}
 
+% Remove line breaks
+\newcommand{\removelinebreaks}[1]{%
+  \begingroup\def\\{ }#1\endgroup}
+
 \renewcommand{\sfdefault}{phv}
 \renewcommand{\rmdefault}{ptm}
 \renewcommand{\ttdefault}{pcr}
@@ -173,7 +177,7 @@
 \hskip 1.5cm \copyright \hskip .1cm \authorname.
 Licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0).
 {\bf Attribution: } \authorname.
-``\@title'',
+``\removelinebreaks{\@title}'',
 \conferenceedition\ International Society for Music Information Retrieval Conference, Paris, France, \conferenceyear.
 \end{spacing}
 }
