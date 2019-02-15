@@ -1,9 +1,13 @@
 % Latex Paper Template for TISMIR
 %
+% Version 20170212
+% Fix unnumbered sections for titlesec 2.10.1 users
+% Francisco Rodríguez-Algarra
+%
 % Version 20170211
 % Adapted ISMIR 2017's paper template to TISMIR requirements.
 % Francisco Rodríguez-Algarra and Stefan Balke
-
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Layout and Page Margins
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,6 +86,24 @@
 \postauthor{\par\end{flushleft}\vspace{-5.5em}}
 
 \usepackage{titlesec}
+
+%%
+% Fix for titlesec 2.10.1 users
+%%
+\@ifpackagelater{titlesec}{2016/03/21}{%
+ % Package titlesec is on version 2.10.2 or higher, nothing to do %
+}{%
+ % Check if package titlesec is on version 2.10.1 %
+ \@ifpackagelater{titlesec}{2016/03/15}{%
+  % Package titlesec on version 2.10.1, patch accordingly %
+  \usepackage{etoolbox}%
+  \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}%
+  \patchcmd{\ttlh@hang}{\noindent}{}{}{}%
+ }{%
+  % Package titlesec is on version 2.10.0 or lower, nothing to do %
+ }%
+}
+%%
 
 \titleformat{\section}
   {\large\sf\bfseries}{\thesection.}
