@@ -22,11 +22,12 @@
 % Mind the bookmarks=false option; bookmarks are incompatible with ismir.sty.
 
 \usepackage{lineno}
-\linenumbers
+% \linenumbers
 
-% Title.
+% Title. Please use IEEE-compliant title case when specifying the title here,
+% as it has implications for the copyright notice
 % ------
-\title{Paper Template For ISMIR \conferenceyear}
+\title{Paper template for ISMIR \conferenceyear}
 
 % Note: Please do NOT use \thanks or a \footnote in any of the author markup
 
@@ -43,19 +44,12 @@
 %  {First author} {School \\ Department}
 %  {Second author} {Company \\ Address}
 
-%% To make customize author list in Creative Common license, uncomment and customize the next line
-%  \def\authorname{First Author, Second Author}
-
-
 % Three addresses
 % --------------
 \threeauthors
   {First Author} {Affiliation1 \\ {\tt author1@ismir.edu}}
   {Second Author} {\bf Retain these fake authors in\\\bf submission to preserve the formatting}
   {Third Author} {Affiliation3 \\ {\tt author3@ismir.edu}}
-
-%% To make customize author list in Creative Common license, uncomment and customize the next line
-%  \def\authorname{First Author, Second Author, Third Author}
 
 % Four or more addresses
 % OR alternative format for large number of co-authors
@@ -67,8 +61,10 @@
 %$^3$  Company, Address\\
 %{\tt\small CorrespondenceAuthor@ismir.edu, PossibleOtherAuthor@ismir.edu}
 %}
-%\def\authorname{First author, Second author, Third author, Fourth author, Fifth author, Sixth author}
 
+% For the author list in the Creative Common license, please enter author names. 
+% Please abbreviate the first names of authors and add 'and' between the second to last and last authors.
+\def\authorname{F. Author, S. Author, and T. Author}
 
 \sloppy % please retain sloppy command for improved formatting
 
@@ -214,36 +210,38 @@ E=mc^{2}
 
 \section{Citations}
 
-All bibliographical references should be listed at the end,
-inside a section named ``REFERENCES,'' numbered and in alphabetical order.
-All references listed should be cited in the text.
-When referring to a document, type the number in square brackets
-\cite{Author:00}, or for a range \cite{Author:00,Someone:10,Someone:04}.
+All bibliographical references should be listed at the end of the submission, in a section named ``REFERENCES,''
+numbered and in the order that they first appear in the text. Formatting in the REFERENCES section must conform to the
+IEEE standard (http://journals.ieeeauthorcenter.ieee.org/wp-content/uploads/sites/7/IEEE-Reference-Guide.pdf). Approved
+IEEE abbreviations (Proceedings $\rightarrow$ Proc.) may be used to shorten reference listings. All references listed
+should be cited in the text. When referring to documents, place the numbers in square brackets (e.g., \cite{ISMIR17Author:01}
+for a single reference, or \cite{JNMR10Someone:01,Book20Person:01,Chapter09Person:01} for a range).
 
-When the following words appear in the conference publication titles, please abbreviate them: Proceedings $\rightarrow$ Proc.; Record $\rightarrow$ Rec.; Symposium $\rightarrow$ Symp.; Technical Digest $\rightarrow$ Tech. Dig.; Technical Paper $\rightarrow$ Tech. Paper; First $\rightarrow$ 1st; Second $\rightarrow$ 2nd; Third $\rightarrow$ 3rd; Fourth/nth $\rightarrow$ 4th/nth.
-
-\textcolor{red}{As submission is double blind, refer to your own published work in the third person. That is, use ``In the previous work of \cite{Someone:10},'' not ``In our previous work \cite{Someone:10}.'' If you cite your other papers that are not widely available (e.g., a journal paper under review), use anonymous author names in the citation, e.g., an author of the form ``A. Anonymous.''}
+\textcolor{red}{As submission is double blind, refer to your own published work in the third person. That is, use ``In the previous work of \cite{ISMIR17Author:01},'' not ``In our previous work \cite{ISMIR17Author:01}.'' If you cite your other papers that are not widely available (e.g., a journal paper under review), use anonymous author names in the citation, e.g., an author of the form ``A. Anonymous.''}
 
 % For bibtex users:
 \bibliography{ISMIRtemplate}
 
 % For non bibtex users:
 %\begin{thebibliography}{citations}
+% \bibitem{Author:17}
+% E.~Author and B.~Authour, ``The title of the conference paper,'' in {\em Proc.
+% of the Int. Society for Music Information Retrieval Conf.}, (Suzhou, China),
+% pp.~111--117, 2017.
 %
-%\bibitem {Author:00}
-%E. Author.
-%``The Title of the Conference Paper,''
-%{\it Proceedings of the International Symposium
-%on Music Information Retrieval}, pp.~000--111, 2000.
+% \bibitem{Someone:10}
+% A.~Someone, B.~Someone, and C.~Someone, ``The title of the journal paper,''
+%  {\em Journal of New Music Research}, vol.~A, pp.~111--222, September 2010.
 %
-%\bibitem{Someone:10}
-%A. Someone, B. Someone, and C. Someone.
-%``The Title of the Journal Paper,''
-%{\it Journal of New Music Research},
-%Vol.~A, No.~B, pp.~111--222, 2010.
+% \bibitem{Person:20}
+% O.~Person, {\em Title of the Book}.
+% \newblock Montr\'{e}al, Canada: McGill-Queen's University Press, 2020.
 %
-%\bibitem{Someone:04} X. Someone and Y. Someone. {\it Title of the Book},
-%    Editorial Acme, Porto, 2012.
+% \bibitem{Person:09}
+% F.~Person and S.~Person, ``Title of a chapter this book,'' in {\em A Book
+% Containing Delightful Chapters} (A.~G. Editor, ed.), pp.~58--102, Tokyo,
+% Japan: The Publisher, 2009.
+%
 %
 %\end{thebibliography}
 
