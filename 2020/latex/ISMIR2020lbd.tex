@@ -1,5 +1,5 @@
 % -----------------------------------------------
-% Template for ISMIR Papers
+% Template for ISMIR LBD Papers
 % 2020 version, based on previous ISMIR templates
 
 % Requirements :
@@ -13,21 +13,24 @@
 \documentclass{article}
 \usepackage[T1]{fontenc} % add special characters (e.g., umlaute)
 \usepackage[utf8]{inputenc} % set utf-8 as default input encoding
-\usepackage{ismir,amsmath,cite,url}
-\usepackage{graphicx}
-\usepackage{color}
 
-% Optional: To use hyperref, uncomment the following.
-% \usepackage[bookmarks=false,hidelinks]{hyperref}
-% Mind the bookmarks=false option; bookmarks are incompatible with ismir.sty.
-
-\usepackage{lineno}
-% \linenumbers
+% For the author list in the Creative Common license and PDF metadata, please enter author names. 
+% Please abbreviate the first names of authors and add 'and' between the second to last and last authors.
+\def\authorname{F. Author, S. Author, and T. Author}
 
 % Title. Please use IEEE-compliant title case when specifying the title here,
 % as it has implications for the copyright notice
 % ------
-\title{Paper template for ISMIR \conferenceyear}
+\def\papertitle{Paper template for ISMIR \conferenceyear}
+
+
+\usepackage{ismir-lbd}
+
+\usepackage{lineno}
+% \linenumbers
+
+
+\title{\papertitle}
 
 % Note: Please do NOT use \thanks or a \footnote in any of the author markup
 
@@ -62,10 +65,6 @@
 %{\tt\small CorrespondenceAuthor@ismir.edu, PossibleOtherAuthor@ismir.edu}
 %}
 
-% For the author list in the Creative Common license, please enter author names. 
-% Please abbreviate the first names of authors and add 'and' between the second to last and last authors.
-\def\authorname{F. Author, S. Author, and T. Author}
-
 \sloppy % please retain sloppy command for improved formatting
 
 \begin{document}
@@ -87,7 +86,11 @@ If you have any questions, please contact the Program Committee (\texttt{ismir\c
 This template can be downloaded from the ISMIR \conferenceyear\ web site (\texttt{http://ismir\conferenceyear.ismir.net}).
 %
 \section{Paper Length \& File Size}
+\ifdefined\lbd
+Late-Breaking Demo papers may have a maximum of 2 pages. Please note that extended abstract is not a conference paper. Therefore, it will not be part of the official ISMIR \conferenceyear\ proceedings, and should not be cited as such.
+\else
 We adopt a ``(6+n)-page policy'' for ISMIR \conferenceyear. That is, each paper may have a maximum of six pages of technical content (including figures and tables) \textcolor{red}{with additional optional pages that contain only references and acknowledgments. Note that acknowledgments should not be included in the anonymized submission.}
+\fi
 
 Paper should be submitted as PDFs and the \textcolor{red}{file size is limited to 4MB}. Please compress images and figures as necessary before submitting.
 

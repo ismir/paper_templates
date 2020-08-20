@@ -63,7 +63,29 @@
 %%%<<<<<<<<<<>>>>>>>>>>>%%%
 %%%<<<<<<<<<<>>>>>>>>>>>%%%
 
+% \DeclareOption{lbd}{
+\def\lbd{}
+% }
 
+\ProcessOptions\relax
+
+\ifdefined\lbd
+\def\papersubject{Extended Abstracts for the Late-Breaking Demo Session of the \conferenceedition\ Int. Society for Music Information Retrieval Conf., \conferenceplace, \conferenceyear}
+\else
+\def\papersubject{Proceedings of the \conferenceedition\ Int. Society for Music Information Retrieval Conf., \conferenceplace, \conferenceyear}
+\fi
+\RequirePackage{amsmath}
+\RequirePackage{cite}
+\RequirePackage{url}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage[
+  bookmarks=false, % Mind the bookmarks=false option; bookmarks are incompatible with ismir.sty.
+  hidelinks,
+  pdfauthor={\authorname}, 
+  pdftitle={\papertitle},
+  pdfsubject={\papersubject}
+]{hyperref}
 
 %\newcommand\setauthorname[1]{\def\authorname{#1}}
 %Do this in the oneauthor, twoauthor, etc. commands
@@ -190,8 +212,12 @@
 \hskip 1.5cm \copyright \hskip .1cm \authorname.
 Licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0).
 {\bf Attribution: } \authorname,
-``\removelinebreaks{\@title}'', 
+``\removelinebreaks{\@title}'', %
+\ifdefined\lbd
+\emph{Extended Abstracts for the Late-Breaking Demo Session of the \conferenceedition\ Int. Society for Music Information Retrieval Conf.,} \conferenceplace, \conferenceyear.
+\else
 in \emph{Proc. of the \conferenceedition\ Int. Society for Music Information Retrieval Conf.,} \conferenceplace, \conferenceyear.
+\fi
 \end{spacing}
 }
 \end{figure}
