@@ -15,12 +15,32 @@
 \usepackage[utf8]{inputenc} % set utf-8 as default input encoding
 \usepackage{ismir,amsmath,cite,url}
 \usepackage{graphicx}
+
 \usepackage{color}
+
+
+% Add watermark for LBD
+\usepackage[firstpage]{draftwatermark}
+\definecolor{lightgray}{rgb}{0.9,0.9,0.9}
+\definecolor{darkgray}{rgb}{0.4,0.4,0.4}
+\SetWatermarkFontSize{12pt}
+\SetWatermarkScale{1.1}
+\SetWatermarkAngle{90}
+\SetWatermarkHorCenter{202mm}
+\SetWatermarkVerCenter{170mm}
+\SetWatermarkColor{darkgray}
+\SetWatermarkText{Late-Breaking / Demo Session Extended Abstract, ISMIR 2022 Conference}
+
+
+
+
 \def\lbd{}	% Flag to use correct LBD settings in the paper, please do not modify this line
 
 \usepackage{lineno}
 \linenumbers
 
+
+% \onecolumn
 % Title. Please use IEEE-compliant title case when specifying the title here,
 % as it has implications for the copyright notice
 % ------
