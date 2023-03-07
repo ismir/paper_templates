@@ -272,3 +272,8 @@
 
 \flushbottom
 \sloppy
+
+\usepackage[switch]{lineno}
+\DeclareOption{review}{\linenumbers}
+\DeclareOption*{\PackageWarning{tismir}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
