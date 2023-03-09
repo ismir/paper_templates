@@ -10,6 +10,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[utf8]{inputenc}
+% To remove the line numbers for the camera-ready version of your paper, remove
+% the `review` option from the tismir package
 \usepackage[review]{tismir}
 \usepackage{amsmath}
 \usepackage{hyperref}
@@ -194,6 +196,14 @@ as in Eqn.~(\ref{eq:eq}).
 \begin{align}\label{eq:eq}
 E = mc^2
 \end{align}
+
+\section{Line numbers}
+Line numbers are printed in the margins to facilitate the
+review process. To remove line numbers for the camera-ready
+version of your paper, remove the \verb=review= option from the
+\verb=tismir= package in the preamble:
+\verb=\usepackage[review]{tismir}= $\rightarrow$
+\verb=\usepackage{tismir}=.
 
 \section{Reproducibility (if applicable)}
 
