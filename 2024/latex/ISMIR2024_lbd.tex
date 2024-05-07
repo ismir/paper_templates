@@ -3,7 +3,7 @@
 % 2024 version, based on previous ISMIR templates
 
 % Requirements :
-% * 2+n page length maximum
+% * 2+1 page length maximum
 % * 10MB maximum file size
 % * Copyright note must appear in the bottom left corner of first page
 % * Clearer statement about citing own work in anonymized submission
@@ -15,12 +15,32 @@
 \usepackage[utf8]{inputenc} % set utf-8 as default input encoding
 \usepackage{ismir,amsmath,cite,url}
 \usepackage{graphicx}
+
 \usepackage{color}
+
+
+% Add watermark for LBD
+\usepackage[firstpage]{draftwatermark}
+\definecolor{lightgray}{rgb}{0.9,0.9,0.9}
+\definecolor{darkgray}{rgb}{0.4,0.4,0.4}
+\SetWatermarkFontSize{12pt}
+\SetWatermarkScale{1.1}
+\SetWatermarkAngle{90}
+\SetWatermarkHorCenter{202mm}
+\SetWatermarkVerCenter{170mm}
+\SetWatermarkColor{darkgray}
+\SetWatermarkText{Late-Breaking / Demo Session Extended Abstract, ISMIR 2022 Conference}
+
+
+
+
 \def\lbd{}	% Flag to use correct LBD settings in the paper, please do not modify this line
 
-\usepackage{lineno}
-\linenumbers
+%\usepackage{lineno}
+%\linenumbers
 
+
+% \onecolumn
 % Title. Please use IEEE-compliant title case when specifying the title here,
 % as it has implications for the copyright notice
 % ------
@@ -32,8 +52,8 @@
 % To use with only one author or several with the same address
 % ---------------
 %\oneauthor
-% {Names should be omitted for double-blind reviewing}
-% {Affiliations should be omitted for double-blind reviewing}
+% {Names}
+% {Affiliations}
 
 % Two addresses
 % --------------
@@ -215,17 +235,6 @@ IEEE abbreviations (Proceedings $\rightarrow$ Proc.) may be used to shorten refe
 should be cited in the text. When referring to documents, place the numbers in square brackets (e.g., \cite{ISMIR17Author:01}
 for a single reference, or \cite{JNMR10Someone:01,Book20Person:01,Chapter09Person:01} for a range).
 
-\section{Acknowledgments}
-
-\textbf{Do not include in your submission, only in your camera ready version}. This section can be used to refer to any
-individuals or organizations that should be acknowledged in this paper. This section does \textit{not} count towards the 
-page limit for scientific content.
-
-\section{Ethics Statement}
-
-This optional section can be used to provide additional ethical considerations related to your paper, and can be included
-both at submission time and in your camera ready version. See the Call for Papers for details. This section does \textit{not} 
-count towards the page limit for scientific content.
 
 % For bibtex users:
 \bibliography{ISMIRtemplate}
