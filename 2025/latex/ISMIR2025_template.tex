@@ -11,14 +11,12 @@
 % -----------------------------------------------
 
 \documentclass{article}
-\usepackage[T1]{fontenc} % add special characters (e.g., umlaute)
-\usepackage[utf8]{inputenc} % set utf-8 as default input encoding
-\usepackage{ismir,amsmath,cite,url}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[submission]{ismir} % Remove the "submission" option for camera-ready version
+\usepackage{amsmath,cite,url}
 \usepackage{graphicx}
 \usepackage{color}
-
-\usepackage{lineno}
-\linenumbers
 
 % Title. Please use IEEE-compliant title case when specifying the title here,
 % as it has implications for the copyright notice
@@ -30,40 +28,41 @@
 % Single address
 % To use with only one author or several with the same address
 % ---------------
-%\oneauthor
-% {Names should be omitted for double-blind reviewing}
-% {Affiliations should be omitted for double-blind reviewing}
+\oneauthor
+  {Anonymous Authors}
+  {Anonymous Affiliations}
 
 % Two addresses
 % --------------
 %\twoauthors
-%  {First author} {School \\ Department}
-%  {Second author} {Company \\ Address}
+%   {First author} {School \\ Department}
+%   {Second author} {Company \\ Address}
 
 % Three addresses
 % --------------
-\threeauthors
-  {First Author} {Affiliation1 \\ {\tt author1@ismir.edu}}
-  {Second Author} {\bf Retain these fake authors in\\\bf submission to preserve the formatting}
-  {Third Author} {Affiliation3 \\ {\tt author3@ismir.edu}}
+% \threeauthors
+%   {First Author} {Affiliation 1 \\ \texttt{author1@ismir.edu}}
+%   {Second Author} {Affiliation 2 \\ \texttt{author2@ismir.edu}}
+%   {Third Author} {Affiliation 3 \\ \texttt{author3@ismir.edu}}
 
 % Four or more addresses
 % OR alternative format for large number of co-authors
 % ------------
-%\multauthor
-%{First author$^1$ \hspace{1cm} Second author$^1$ \hspace{1cm} Third author$^2$} { \bfseries{Fourth author$^3$ \hspace{1cm} Fifth author$^2$ \hspace{1cm} Sixth author$^1$}\\
-%$^1$ Department of Computer Science, University, Country\\
-%$^2$ International Laboratories, City, Country\\
-%$^3$ Company, Address\\
-%{\tt\small CorrespondenceAuthor@ismir.edu, PossibleOtherAuthor@ismir.edu}
-%}
+% \multauthor
+%   {First author$^1$ \hspace{1cm} Second author$^1$ \hspace{1cm} Third author$^2$}
+%   {{\bf Fourth author$^3$ \hspace{1cm} Fifth author$^2$ \hspace{1cm} Sixth author$^1$}\\
+%   $^1$ Department of Computer Science, University, Country\\
+%   $^2$ International Laboratories, City, Country\\
+%   $^3$ Company, Address\\
+%   {\tt\small CorrespondenceAuthor@ismir.edu, PossibleOtherAuthor@ismir.edu}
+%   }
 
 % For the author list in the Creative Common license, please enter author names.
 % Please abbreviate the first names of authors and add 'and' between the second to last and last authors.
 \def\authorname{F. Author, S. Author, and T. Author}
 
 % Optional: To use hyperref, uncomment the following.
-% \usepackage[bookmarks=false,pdfauthor={\authorname},pdfsubject={\papersubject},hidelinks]{hyperref}
+% \usepackage[bookmarks=false,pdfauthor={\authorname},pdfsubject={\pdfsubject},hidelinks]{hyperref}
 % Mind the bookmarks=false option; bookmarks are incompatible with ismir.sty.
 
 \sloppy % please retain sloppy command for improved formatting
@@ -181,11 +180,9 @@ You may include an optional Ethics Statement section to provide additional ethic
 
 \section{Camera Ready Preparation}\label{sec:cameraready}
 
-\textbf{The camera-ready version should include the names, affiliations and email addresses of the authors.} Authors' names are centered. The lead author's name is to be listed first (left-most), and the co-authors' names after. If the addresses for all authors are the same, include the address only once, centered. If the authors have different addresses, put the addresses, evenly spaced, under each authors' name.
+\textbf{The camera-ready version should include the names, affiliations and email addresses of the authors.} Authors' names are centered. The lead author's name is to be listed first (left-most), and the co-authors' names after. If the addresses for all authors are the same, include the address only once, centered. If the authors have different addresses, put the addresses, evenly spaced, under each authors' name. To display the author information in \LaTeX, please remove the global option `submission' when importing the ismir package (i.e., \texttt{\textbackslash usepackage\{ismir\}} in line 16). \textbf{Please make sure that the author names and paper title are shown correctly in the copyright notice when submitting the camera-ready version}.
 
-\textbf{You will also need to insert the appropriate author names and paper title in the copyright notice when submitting the camera-ready version}. For \LaTeX\ users, this will be handled by the template automatically. For Word users, this has to be done manually.
-
-\textbf{You must also remove all line numbers from the final camera-ready version.} This can be done in \LaTeX\ by commenting out the command \verb|\linenumbers| on Line 21. This can be done in Microsoft Word by selecting ``Layout > Line Numbers > None.''
+\textbf{You must also remove all line numbers from the final camera-ready version.} This can be done in \LaTeX\ by removing the global option `submission' when importing the ismir package (i.e., \texttt{\textbackslash usepackage\{ismir\}} in line 16). This can be done in Microsoft Word by selecting ``Layout > Line Numbers > None.''
 
 % For BibTeX users:
 \bibliography{ISMIRtemplate}
