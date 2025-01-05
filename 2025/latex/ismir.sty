@@ -3,8 +3,10 @@
 % Updated for 2025 Template, 1/2/2024 by Hao-Wen Dong
 %   - changed year to 2025, changed location to "Daejeon, South Korea"
 %   - added a "Camera Ready Preparation" section
-%   - added a global option 'submission' that will automatically enable line numbers
-%     and anonymize the author names
+%   - added a global option 'submission' that will automatically enable line
+%     numbers and anonymize the author names
+%   - added a paragraph to encourage providing alt text to figures and adopting
+%     a color blind friendly color palette for accessibility
 %
 % Updated for 2024 Template, 01.21.24 by Matthew McCallum
 % - changed year to 2024, changed location to "San Francisco, USA"
@@ -248,7 +250,7 @@
 \if@submission
   \gdef\@author{
     \begin{tabular}{@{}c@{}}
-      \textbf{Anonymous Authors}\\Anonymous Affiliations\relax
+      \textbf{Anonymous Authors}\\Anonymous Affiliations\\\texttt{anonymous@ismir.net}\relax
     \end{tabular}
   }
   \def\authorname{F. Author, S. Author, and T. Author}

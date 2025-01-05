@@ -30,7 +30,7 @@
 % ---------------
 \oneauthor
   {Anonymous Authors}
-  {Anonymous Affiliations}
+  {Anonymous Affiliations\\\texttt{anonymous@ismir.net}}
 
 % Two addresses
 % --------------
@@ -134,7 +134,9 @@ Indicate footnotes with a number in the text.\footnote{This is a footnote.} Use 
 
 \subsection{Figures, Tables and Captions}
 
-All artwork must be centered, neat, clean, and legible. All lines should be very dark for purposes of reproduction and art work should not be hand-drawn. The proceedings are not in color, and therefore all figures must make sense in black-and-white form. \textbf{Figure and table numbers and captions always appear below the figure.} Leave 1 line space between the figure or table and the caption. Each figure or table is numbered consecutively. Captions should be Times 10pt. Place tables/figures in text as close to the reference as possible. References to tables and figures should be capitalized, for example: see \figref{fig:example} and \tabref{tab:example}. Figures and tables may extend across both columns to a maximum width of 17.2cm.
+All artwork must be centered, neat, clean, and legible. All lines should be very dark for purposes of reproduction and art work should not be hand-drawn. The proceedings are not in color, and therefore all figures must make sense in black-and-white form. \textbf{Figure and table numbers and captions always appear below the figure.} Leave 1 line space between the figure or table and the caption. Each figure or table is numbered consecutively. Captions should be Times 10pt. Place tables/figures in text as close to the reference as possible. References to tables and figures should be capitalized, for example, see \figref{fig:example} and \tabref{tab:example}. Figures and tables may extend across both columns to a maximum width of 17.2cm.
+
+\textbf{To enhance accessibility, we encourage the authors to provide alt text to the figures.} For \LaTeX\ users, this can be done by providing the `alt' option when calling \texttt{\textbackslash includegraphics}, for example, \texttt{\textbackslash includegraphics[alt=\{example alt text\}]\{example.png\}}. For Word users, this can be done by right-clicking the image and selecting ``Edit Alt Text,'' or alternatively, by selecting ``Picture Format > Alt Text.'' \textbf{To enhance colorblind-friendliness, we encourage the authors to adopt a color blind friendly color palette when making plots.} For Matplotlib users, the `tableau-colorblind10' and `petroff10' color palettes would be good options, which can be enabled by \texttt{plt.style.use('tableau-colorblind10')} and \texttt{plt.style.use('petroff10')}.
 
 \begin{table}
   \centering
@@ -151,7 +153,7 @@ All artwork must be centered, neat, clean, and legible. All lines should be very
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\columnwidth]{example.png}
+  \includegraphics[alt={ISMIR 2025 template example image},width=0.9\linewidth]{example.png}
   \caption{Figure captions should be placed below the figure.}
   \label{fig:example}
 \end{figure}
