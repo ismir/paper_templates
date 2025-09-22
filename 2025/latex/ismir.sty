@@ -1,5 +1,8 @@
 % Latex Paper Template for ISMIR 2025
 %
+% Post-conference update, 9/22/2025 by Hao-Wen Dong
+%   - added a header for camera ready
+%
 % Updated for 2025 Template, 1/2/2024 by Hao-Wen Dong
 %   - changed year to 2025, changed location to "Daejeon, South Korea"
 %   - added a "Camera Ready Preparation" section
@@ -216,6 +219,14 @@
 }
 %%%
 
+% Header
+\if@submission\else
+  \RequirePackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[l]{Proceedings of the 26th ISMIR Conference, Daejeon, Korea, September 21--25, 2025}
+  \thispagestyle{plain}
+\fi
 
 % Copyright notice
 \newcommand{\permission}{%
