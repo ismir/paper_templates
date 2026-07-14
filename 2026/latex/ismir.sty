@@ -261,69 +261,77 @@
 }
 
 % Author information
-\if@submission
-  \gdef\@author{
-    \begin{tabular}{@{}c@{}}
-      \textbf{Anonymous Authors}\\Anonymous Affiliations\\\texttt{anonymous@ismir.net}\relax
-    \end{tabular}
-  }
-  \def\authorname{F. Author, S. Author, and T. Author}
-  \def\multauthor#1#2{}
-  \def\oneauthor#1#2{}
-  \def\twoauthors#1#2#3#4{}
-  \def\threeauthors#1#2#3#4#5#6{}
-\else
-  \def\multauthor#1#2{
+\def\@definerealauthors{
+  \def\multauthor##1##2{
     \gdef\@author{
       \begin{tabular}{@{}c@{}}
-        \textbf{#1}\\#2\relax
+        \textbf{##1}\\##2\relax
       \end{tabular}
     }
   }
 
-  \def\oneauthor#1#2{
+  \def\oneauthor##1##2{
     \gdef\@author{
     \begin{tabular}{@{}c@{}}
-      \textbf{#1}\\#2\relax
+      \textbf{##1}\\##2\relax
      \end{tabular}
     }
   }
 
-  \def\twoauthors#1#2#3#4{
+  \def\twoauthors##1##2##3##4{
     \gdef\@author{
       \makebox[\textwidth]{%
         \hfill
         \begin{tabular}{@{}c@{}}
-          \textbf{#1}\\#2
+          \textbf{##1}\\##2
         \end{tabular}
         \hfill
         \begin{tabular}{@{}c@{}}
-          \textbf{#3}\\#4\relax
+          \textbf{##3}\\##4\relax
         \end{tabular}
         \hfill
       }
     }
   }
 
-  \def\threeauthors#1#2#3#4#5#6{
+  \def\threeauthors##1##2##3##4##5##6{
     \gdef\@author{
       \makebox[\textwidth]{%
         \hfill
         \begin{tabular}{@{}c@{}}
-          \textbf{#1}\\#2
+          \textbf{##1}\\##2
         \end{tabular}
         \hfill
         \begin{tabular}{@{}c@{}}
-          \textbf{#3}\\#4
+          \textbf{##3}\\##4
         \end{tabular}
         \hfill
         \begin{tabular}{@{}c@{}}
-          \textbf{#5}\\#6\relax
+          \textbf{##5}\\##6\relax
         \end{tabular}
         \hfill
       }
     }
   }
+}
+
+\if@submission
+  \if@lbd
+    \@definerealauthors
+  \else
+    \gdef\@author{
+      \begin{tabular}{@{}c@{}}
+        \textbf{Anonymous Authors}\\Anonymous Affiliations\\\texttt{anonymous@ismir.net}\relax
+      \end{tabular}
+    }
+    \def\authorname{F. Author, S. Author, and T. Author}
+    \def\multauthor#1#2{}
+    \def\oneauthor#1#2{}
+    \def\twoauthors#1#2#3#4{}
+    \def\threeauthors#1#2#3#4#5#6{}
+  \fi
+\else
+  \@definerealauthors
 \fi
 
 \def\abstract{\begin{center}\bf ABSTRACT\end{center}}
