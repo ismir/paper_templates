@@ -2,6 +2,7 @@
 % Updated for 2026 Template, 1/29/2026 by Ajay Srinivasamurthy
 %   - changed year to 2026, changed location to "Abu Dhabi, UAE"
 %   - added a note on AI usage policy for authors
+%   - Removed the header from the style file so that we add it during final proceedings
 %
 % Post-conference update, 9/22/2025 by Hao-Wen Dong
 %   - added a header for camera ready
@@ -221,15 +222,6 @@
   \restore@spacing
 }
 %%%
-
-% Header
-\if@submission\else
-  \RequirePackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhf{}
-  \fancyhead[l]{Proceedings of the 27th ISMIR Conference, Abu Dhabi, UAE, November 08--12, 2026}
-  \thispagestyle{plain}
-\fi
 
 % Copyright notice
 \newcommand{\permission}{%
