@@ -300,6 +300,7 @@ ENTRY
     CTLname_format_string
     CTLname_latex_cmd
     CTLname_url_prefix
+    doi
   }
   {}
   { label }
@@ -1928,6 +1929,13 @@ FUNCTION {format.url}
 
 
 
+%% DOI
+FUNCTION {format.doi}
+{ doi empty$
+    { "" }
+    { newline$ "https://doi.org/" doi * }
+  if$
+}
 
 %%%%%%%%%%%%%%%%%%%%
 %% ENTRY HANDLERS %%
@@ -1951,6 +1959,8 @@ FUNCTION {article}
   format.date "year" output.warn
   format.note output
   format.url output
+  new.block
+  format.doi output
   fin.entry
   if.url.std.interword.spacing
 }
@@ -1975,6 +1985,8 @@ FUNCTION {book}
   format.number output
   format.note output
   format.url output
+  new.block
+  format.doi output
   fin.entry
   if.url.std.interword.spacing
 }
@@ -2079,6 +2091,8 @@ FUNCTION {inproceedings}
   format.pages output
   format.note output
   format.url output
+  new.block
+  format.doi output
   fin.entry
   if.url.std.interword.spacing
 }
