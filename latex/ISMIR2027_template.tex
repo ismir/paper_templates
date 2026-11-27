@@ -1,6 +1,6 @@
 % -----------------------------------------------
 % Template for ISMIR Papers
-% 2026 version, based on previous ISMIR templates
+% 2027 version, based on previous ISMIR templates
 
 % Requirements :
 % * 6+n page length maximum
@@ -17,7 +17,6 @@
 \usepackage{amsmath,cite,url}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{booktabs}
 
 % Title. Please use IEEE-compliant title case when specifying the title here,
 % as it has implications for the copyright notice
@@ -86,13 +85,6 @@ We adopt a ``\textbf{(6+n)-page policy}'' for ISMIR \conferenceyear. That is, ea
 
 Paper should be submitted as a PDF file. \textbf{The file size is limited to 10MB.} Please compress images and figures as necessary before submitting.
 
-\begin{figure}
-  \centering
-  \includegraphics[alt={ISMIR 2026 template example image},width=0.9\linewidth]{example.png}
-  \caption{Figure captions should be placed below the figure.}
-  \label{fig:example}
-\end{figure}
-
 \section{Page Size}\label{sec:page_size}
 
 The proceedings will be printed on \underline{portrait A4-size paper} \underline{(21.0cm x 29.7cm)}. All material on each page should fit within a rectangle of 17.2cm x 25.2cm, centered on the page, beginning 2.0cm from the top of the page and ending with 2.5cm from the bottom. The left and right margins should be 1.9cm. The text should be in two 8.2cm columns with a 0.8cm gutter. All text must be in a two-column format. Text must be fully justified.
@@ -140,34 +132,31 @@ Third-level headings are in Times 10pt italic, flush left, with 1/2 line of spac
 
 Indicate footnotes with a number in the text.\footnote{This is a footnote.} Use 8pt type for footnotes. Place the footnotes at the bottom of the page on which they appear. Precede the footnote with a 0.5pt horizontal rule.
 
-
-\begin{table}[t]
-    \centering
-    \begin{tabular}{lc}
-        \toprule
-        \textbf{Name} & \textbf{Period}\\
-        \midrule
-        Medieval & ca. 500-1400\\
-        Renaissance & ca. 1400-1600\\
-        Baroque &  ca. 1600-1750\\
-        Classical &  ca. 1730-1820\\
-        Romantic &  ca. 1800-1910\\
-        Modernism & from ca. 1890\\
-        Contemporary & from ca. 1945\\
-        \bottomrule
-    \end{tabular}
-    \caption{Major eras of Western classical music.}\label{tab:example}
-\end{table}
-
-
-
-
 \subsection{Figures, Tables and Captions}
 
 All artwork must be centered, neat, clean, and legible. All lines should be very dark for purposes of reproduction and artwork should not be hand-drawn. While proceedings are generated in color, all figures must also make sense when printed out in grayscale. \textbf{Figure and table numbers and captions always appear below the figure.} Leave 1 line space between the figure or table and the caption. Each figure or table is numbered consecutively. Captions should be Times 10pt. Place tables/figures in text as close to the reference as possible. References to tables and figures should be capitalized, for example, see \figref{fig:example} and \tabref{tab:example}. Figures and tables may extend across both columns to a maximum width of 17.2cm.
 
 \textbf{To enhance accessibility, we strongly encourage the authors to adopt a color blind friendly color palette when making plots.} For Matplotlib users, the `tableau-colorblind10' and `petroff10' color palettes would be good options, which can be enabled by \texttt{plt.style.use('tableau-colorblind10')} and \texttt{plt.style.use('petroff10')}.
 
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    String value & Numeric value \\
+    \hline
+    Hello ISMIR  & \conferenceyear \\
+    \hline
+  \end{tabular}
+  \caption{Table captions should be placed below the table.}
+  \label{tab:example}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[alt={ISMIR 2025 template example image},width=0.9\linewidth]{example.png}
+  \caption{Figure captions should be placed below the figure.}
+  \label{fig:example}
+\end{figure}
 
 \section{Equations}
 
@@ -179,9 +168,9 @@ E=mc^{2}
 
 \section{Citations}
 
-All bibliographical references should be listed at the end of the submission, in a section named ``REFERENCES,'' numbered and in the order that they first appear in the text. Formatting in the REFERENCES section must conform to the IEEE standard (\url{https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf}). Approved IEEE abbreviations (Proceedings $\rightarrow$ Proc.) may be used to shorten reference listings. All references listed should be cited in the text. When referring to documents, place the numbers in square brackets (e.g., \cite{Mueller21_FMP_SPRINGER} for a single reference, or \cite{KneesS16_MusicSimilarityRetrieval_SPRINGER,WeihsJVR16_MusicDataAnalysis_CRC,Lerch23_AudioContentAnalysis_WILEY,SerraEtAl13_RoadmapMIR_CreativeCommon} for a range).
+All bibliographical references should be listed at the end of the submission, in a section named ``REFERENCES,'' numbered and in the order that they first appear in the text. Formatting in the REFERENCES section must conform to the IEEE standard (\url{https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf}). Approved IEEE abbreviations (Proceedings $\rightarrow$ Proc.) may be used to shorten reference listings. All references listed should be cited in the text. When referring to documents, place the numbers in square brackets (e.g., \cite{ISMIR17Author:01} for a single reference, or \cite{JNMR10Someone:01,Book20Person:01,Chapter09Person:01} for a range).
 
-\textbf{As submission is double blind, refer to your own published work in the third person.} That is, use ``In the previous work of \cite{Mueller21_FMP_SPRINGER},'' not ``In our previous work \cite{Lerch23_AudioContentAnalysis_WILEY}.'' If you cite your other papers that are not widely available (e.g., a journal paper under review), use anonymous author names in the citation, e.g., an author of the form ``A. Anonymous.''
+\textbf{As submission is double blind, refer to your own published work in the third person.} That is, use ``In the previous work of \cite{ISMIR17Author:01},'' not ``In our previous work \cite{ISMIR17Author:01}.'' If you cite your other papers that are not widely available (e.g., a journal paper under review), use anonymous author names in the citation, e.g., an author of the form ``A. Anonymous.''
 
 \section{Acknowledgments}
 
@@ -189,7 +178,7 @@ You may include an optional Acknowledgments section in your camera-ready version
 
 \section{AI Usage Statement}
 
-In line with the ISMIR 2026 AI Usage Policy, if you need to declare and explain the use of AI tools in the work described in the paper, you can do so by including a section titled ``AI Usage Statement" at the end of the paper. The AI Usage Statement section can be included both at submission time and in your camera-ready version. See the Call for Papers and Author Guidelines for more details. The AI Usage Statement section does \textit{not} count towards the page limit for scientific content. 
+In line with the ISMIR 2027 AI Usage Policy, if you need to declare and explain the use of AI tools in the work described in the paper, you can do so by including a section titled ``AI Usage Statement" at the end of the paper. The AI Usage Statement section can be included both at submission time and in your camera-ready version. See the Call for Papers and Author Guidelines for more details. The AI Usage Statement section does \textit{not} count towards the page limit for scientific content. 
 
 \section{Ethics Statement}
 
@@ -199,7 +188,7 @@ You may include an optional Ethics Statement section at the end of the paper to 
 
 \textbf{The camera-ready version should include the names, affiliations and email addresses of the authors.} Authors' names are centered. The lead author's name is to be listed first (left-most), and the co-authors' names after. If the addresses for all authors are the same, include the address only once, centered. If the authors have different addresses, put the addresses, evenly spaced, under each authors' name. To display the author information in \LaTeX, please remove the global option `submission' when importing the `ismir' package (i.e., \texttt{\textbackslash usepackage\{ismir\}} in line 16).
 
-\textbf{Please make sure that the author names, paper title and proceedings title are shown correctly in the copyright notice.} For \LaTeX\ users, the proceedings title will be automatically loaded when you remove the global option `submission' when importing the `ismir' package (i.e., \texttt{\textbackslash usepackage\{ismir\}} in line 16). For Word users, you will need to manually replace ``submitted to \textit{ISMIR}, 2026'' to ``in \textit{Proc. of the 27th Int. Society for Music Information Retrieval Conf.}, Abu Dhabi, UAE, 2026.''
+\textbf{Please make sure that the author names, paper title and proceedings title are shown correctly in the copyright notice.} For \LaTeX\ users, the proceedings title will be automatically loaded when you remove the global option `submission' when importing the `ismir' package (i.e., \texttt{\textbackslash usepackage\{ismir\}} in line 16). For Word users, you will need to manually replace ``submitted to \textit{ISMIR}, 2027'' to ``in \textit{Proc. of the 28th Int. Society for Music Information Retrieval Conf.}, London, UK, 2027.''
 
 \textbf{You must also remove all line numbers from the final camera-ready version.} This can be done in \LaTeX\ by removing the global option `submission' when importing the ismir package (i.e., \texttt{\textbackslash usepackage\{ismir\}} in line 16). This can be done in Microsoft Word by selecting ``Layout > Line Numbers > None.''
 
